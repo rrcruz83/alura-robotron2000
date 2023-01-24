@@ -1,16 +1,19 @@
-const robotron = document.querySelector("#robotron")
-const box = document.querySelector(".box")
+const somar = document.querySelector("#somar");
+const subtrair = document.querySelector("#subtrair");
+const contador = document.querySelector("#contador");
 
-robotron.addEventListener("click", function() {
-    console.log("Isso é uma função anônima")
-})
+const controle = document.querySelectorAll(".controle-ajuste");
 
-box.addEventListener("click", (nome) => {
-    console.log("Isso é um arrow function / Função de seta")
-})
+controle.forEach( (elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        manipulaDados(evento.target.textContent);
+    })
+}); 
 
-function BemVindo (nome) {
-    console.log("Olá, " + nome + "! Isso é uma função declarada")
-}
-
-BemVindo("Robson");
+function manipulaDados(operacao) {
+    if (operacao == "-") {
+        contador.value = parseInt(contador.value) - 1;
+    } else {
+        contador.value = parseInt(contador.value) + 1;
+    }
+};
