@@ -75,3 +75,7 @@ function atualizaEstatiticas (peca) {
         //console.log(pecas[peca][elemento.dataset.estatistica]);
     })
 }
+
+function trocaImagem(cor){
+    document.querySelector(".robo").src="img/Robotron 2000 - " + cor + ".png";
+ }
